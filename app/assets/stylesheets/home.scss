@@ -1,0 +1,15 @@
+// "layouts/_navbar"
+
+.search-link {
+  color: rgba(0,0,0,.5);
+  // text-decoration: none;
+}
+.search-link:hover,
+.search-link:focus,
+{
+  color: rgba(0,0,0,.7);
+  text-decoration: none;
+}
+.top-title {
+  color: #ffa500;
+}
