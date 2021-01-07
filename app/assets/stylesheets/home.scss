@@ -12,7 +12,6 @@ a:hover,a:focus {
   color: rgba(0,0,0,.7);
   text-decoration: none;
 }
-
 // ナビゲーションバー "layouts/_navbar"
 .search-link {
   color: rgba(0,0,0,.5);
@@ -26,6 +25,17 @@ a:hover,a:focus {
 .wrapper {
   text-align: center;
   margin: 100px 0 150px;
+}
+@media (max-width: 500px) {
+  /* ウインドウ幅500px以上の時に適用されるスタイル */
+  .wrapper {
+  text-align: center;
+  margin: 50px 0 50px;
+  }
+  .text-br::before{
+	content: "\A" ;
+	white-space: pre ;
+  }
 }
 .title {
   margin-bottom: 30px;
