@@ -12,6 +12,7 @@ a:hover,a:focus {
   color: rgba(0,0,0,.7);
   text-decoration: none;
 }
+
 // ナビゲーションバー "layouts/_navbar"
 .search-link {
   color: rgba(0,0,0,.5);
@@ -57,7 +58,7 @@ a:hover,a:focus {
   color: #fff;
 }
 
-// users(/users)
+// users#index (/users)
 .user-text {
   font-size: 1.5rem;
 }
@@ -65,8 +66,47 @@ a:hover,a:focus {
   font-size: 1.2rem;
 }
 .user-image {
-  font-size: 7.5em;
+  font-size: 7.5rem;
 }
 .paginate {
   margin: 0 auto;
+}
+
+// users#show (users/:id)
+.my-user-wapper {
+  
+}
+.my-user-image {
+  text-align: right;
+}
+.my-user-phote {
+  font-size: 10rem;
+}
+.my-user-name {
+  text-align: left;
+  height: 160px;
+}
+.my-user-text {
+  font-size: 1.75rem;
+}
+@media (max-width: 767px) {
+  .my-user-image {
+  text-align: center;
+  }
+  .my-user-name {
+  text-align: center;
+  height: 42px;
+  }
+  .my-user-text {
+    padding: 10px 0;
+  }
+}
+@media (min-width: 768px) {
+  .my-user-text {
+    line-height: 160px;
+  }
+}
+// ナビゲーション
+.nav-text {
+  padding: 8px 0;
 }
