@@ -2,7 +2,7 @@
   <div class="row">
     <% users.each do |user| %>
       <div class="col-12 col-sm-6 col-lg-4">
-        <div class="user-card mb-5">
+        <div class="user-card mb-5 text-center">
           <div class="mt-3">
             <a href="#">
               <i class="user-image fas fa-user-circle"></i>
@@ -16,5 +16,7 @@
       </div>
     <% end %>
   </div>
-  <%= paginate users %>
+  <div class="col-4 offset-4">
+    <p class="paginate"><%= paginate users %></p>
+  </div>
 <% end %>
