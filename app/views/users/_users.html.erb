@@ -14,7 +14,7 @@
                   <i class="user-image fas fa-user-circle"></i>
                 </p>
               <% end %>
-              <p class="user-text mb-0"><%= user.name %></p>
+              <p><%= link_to user.name, user_path(user), class: "user-text mb-0" %></p>
             </a>
           </div>
           <div class="mt-1">
