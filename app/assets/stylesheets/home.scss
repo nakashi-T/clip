@@ -107,9 +107,10 @@ a:hover,a:focus {
   }
 }
 .my-user-picture{
+  object-fit: cover;
   height: 155px;
   width: 155px;
-  border-radius: 77.5px;
+  border-radius: 50%;
 }
 
 
