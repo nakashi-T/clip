@@ -12,32 +12,35 @@
         
         <div class="form-group">
           
-          <% if @user.image.present? %>
-            <%= image_tag @user.image, id: :img_prev %>
-          <% else %>
-            <%= image_tag "default_user.svg", id: :img_prev %>
-          <% end %>
-          
-          <%= f.label :img %>
-          <%= f.file_field :image, id: :user_image %>
-          
-          <script type="text/javascript">
-            $(function() {
-             function readURL(input) {
-               if (input.files && input.files[0]) {
-                 var reader = new FileReader();
-                 reader.onload = function (e) {
-                   $('#img_prev').attr('src', e.target.result);
+          <div>
+            <% if @user.image.present? %>
+              <%= image_tag @user.image, id: :img_prev, class: "sign-user-picture" %>
+            <% else %>
+              <%= image_tag "default_user.svg", id: :img_prev, class: "sign-user-picture" %>
+            <% end %>
+          </div>
+          <div>
+            <%= f.file_field :image, id: :user_image %>
+            
+            <script type="text/javascript">
+              $(function() {
+               function readURL(input) {
+                 if (input.files && input.files[0]) {
+                   var reader = new FileReader();
+                   reader.onload = function (e) {
+                     $('#img_prev').attr('src', e.target.result);
+                   }
+                   reader.readAsDataURL(input.files[0]);
                  }
-                 reader.readAsDataURL(input.files[0]);
                }
-             }
-             $("#user_image").change(function(){
-               readURL(this);
-               console.log(this);
-             });
-            });
-          </script>
+               $("#user_image").change(function(){
+                 readURL(this);
+                 console.log(this);
+               });
+              });
+            </script>
+          </div>
+          
           
         </div>
         
