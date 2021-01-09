@@ -17,6 +17,11 @@
       
       <%= form_with(model: @user, local: true) do |f| %>
         
+        <div class="field">
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+        
         <div class="form-group">
           <%= f.label :name, 'ユーザー名' %>
           <%= f.text_field :name, required: true, placeholder: '15文字以下で入力してください', class: 'form-control' %>
