@@ -3,24 +3,23 @@
 </div>
 
 <div>
-
-  
   <div class="row">
-    <div class="signup-form col-sm-6 offset-sm-3">
+    <div class="signup-form col-12 col-sm-9 col-md-8 col-lg-6 col-xl-5">
       
       <%= form_with(model: @user, local: true) do |f| %>
         
         <div class="form-group">
           
-          <div>
+          <div class="sign-user-image">
             <% if @user.image.present? %>
               <%= image_tag @user.image, id: :img_prev, class: "sign-user-picture" %>
             <% else %>
               <%= image_tag "default_user.svg", id: :img_prev, class: "sign-user-picture" %>
             <% end %>
           </div>
-          <div>
-            <%= f.file_field :image, id: :user_image %>
+          <div class="sign-user-name">
+            <%= f.label :image, "写真を選択" ,class: "signup-button btn btn-primary btn-block" %>
+            <%= f.file_field :image, id: :user_image, class: "picture-form" %>
             
             <script type="text/javascript">
               $(function() {
