@@ -1,0 +1,9 @@
+<% if @user.image? %>
+  <p>
+    <%= image_tag @user.image.url, class: 'my-user-picture' %>
+  </p>
+<% else %>
+  <p>
+    <i class="my-user-photo fas fa-user-circle"></i>
+  </p>
+<% end %>

@@ -1,15 +1,7 @@
 <aside>
   <div class="row my-user-wapper">
     <div class="my-user-image col-md-5">
-      <% if @user.image %>
-        <p>
-          <%= image_tag @user.image.url if @user.image? %>
-        </p>
-      <% else %>
-        <p>
-          <i class="my-user-photo fas fa-user-circle"></i>
-        </p>
-        <% end %>
+      <%= render 'users_image' %>
     </div>
     <div class="photo-right col-md-5 offset-md-2">
       <p class="my-user-text mb-0"><%= @user.name %></p>
