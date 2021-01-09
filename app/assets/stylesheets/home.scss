@@ -69,10 +69,16 @@ a:hover,a:focus {
   font-size: 1.2rem;
 }
 .user-image {
-  font-size: 7.5rem;
+  font-size: 8rem;
 }
 .paginate {
   margin: 0 auto;
+}
+.user-picture {
+  object-fit: cover;
+  height: 128px;
+  width: 128px;
+  border-radius: 50%;
 }
 
 // users#show (users/:id)
