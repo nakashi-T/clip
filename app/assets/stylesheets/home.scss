@@ -209,7 +209,7 @@ a:hover,a:focus {
   display: none;
 }
 
-// ログイン
+// ログイン "/login"
 .text-login {
   text-align: center;
 }
@@ -219,4 +219,13 @@ a:hover,a:focus {
 .text-login a:hover {
   color: #009dff;
   text-decoration: underline;
+}
+
+// 新規投稿 "/posts/new"
+.post-field {
+  line-height:270px;
+  text-align:center;
+}
+.post-button {
+  display:inline-block;
 }

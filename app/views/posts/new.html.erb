@@ -1,22 +1,33 @@
-<div>
+
   <%= form_with(model: @post, local: true) do |f| %>
     <div class="row">
-      <div class="col-sm-6 offset-sm-1">
+      <div class="col-md-6">
         <div class="field">
           <%= f.label :image %>
           <%= f.file_field :image %>
         </div>
+        <div>
+          <p>XXMBまでの画像をアップロードできます</p>
+        </div>
       </div>
-      <div >
-        
+      <div class="col-md-5 offset-md-1">
+        <p><span class="badge badge-danger">必須</span>自己評価カテゴリー<span class="badge badge-success">１</span></p>
+          <%= render '/posts/evaluations_select' %>
+        <p>自己評価カテゴリー</p>
+          <%= render '/posts/evaluations_select' %>
+        <p>自己評価カテゴリー</p>
+          <%= render '/posts/evaluations_select' %>
       </div>
-      <div></div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :capture, 'キャプション' %>
+        <%= f.text_area :capture, size: "40x10", maxlength: "140", placeholder: '140字以内で入力してください。' %>
+      </div>
+      <div class="post-field col-md-5 offset-md-1">
+        <%= f.submit '投稿する', class: 'post-button signup-button btn btn-primary btn-block mb-5' %>
+      </div>
     </div>
   <% end %>
-</div>
 
 
-
-
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
