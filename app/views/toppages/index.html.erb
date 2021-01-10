@@ -1,22 +1,24 @@
-<div class="wrapper">
-  <div class="title">
-    <h2>あなたの写真に<span class="text-br">意味付けしよう！</h2>
+<% if logged_in? %>
+  <%= render 'posts/posts', posts: @posts %>
+<% else %>
+  <div class="wrapper">
+    <div class="title">
+      <h2>あなたの写真に<span class="text-br">意味付けしよう！</h2>
+    </div>
+    <div class="title top-title">
+      <h1>Clip</h1>
+    </div>
+    <div>
+      <p>あなたが撮る写真はどんなものですか？</p>
+      <p>家族や友達との写真、風景や自然、はたまた<span class="text-br">仕事関連など色々ありますよね。</p>
+      <p>それらの写真に意味を残しておくことで <br>
+         後々撮影した自分の気持ちを元に<span class="text-br">振り返ることができるはずです！</p>
+      <p>Clipでは写真に５段階評価をつけて<br>
+         撮影者の喜怒哀楽の強弱まで<span class="text-br">共有することができます。</p>
+      <p>さあ、あなたも写真を共有しよう！</p>
+    </div>
+    <div class="button toppage-button">
+      <%= link_to '今すぐ登録する', signup_path %>
+    </div>
   </div>
-  <div class="title top-title">
-    <h1>Clip</h1>
-  </div>
-  <div>
-    <p>あなたが撮る写真はどんなものですか？</p>
-    <p>家族や友達との写真、風景や自然、はたまた<span class="text-br">仕事関連など色々ありますよね。</p>
-    <p>それらの写真に意味を残しておくことで <br>
-       後々撮影した自分の気持ちを元に<span class="text-br">振り返ることができるはずです！</p>
-    <p>Clipでは写真に５段階評価をつけて<br>
-       撮影者の喜怒哀楽の強弱まで<span class="text-br">共有することができます。</p>
-    <p>さあ、あなたも写真を共有しよう！</p>
-  </div>
-  <div class="button toppage-button">
-    <%= link_to '今すぐ登録する', signup_path %>
-  </div>
-</div>
-
-<%= render 'posts/posts', posts: @posts %>
+<% end %>

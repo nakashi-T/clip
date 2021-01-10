@@ -210,10 +210,13 @@ a:hover,a:focus {
 }
 
 // ログイン
-.text-center a {
+.text-login {
+  text-align: center;
+}
+.text-login a {
   color: #00bfff;
 }
-.text-center a:hover {
+.text-login a:hover {
   color: #009dff;
   text-decoration: underline;
 }
