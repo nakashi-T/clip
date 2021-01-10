@@ -1,10 +1,26 @@
 class PostsController < ApplicationController
+  before_action :require_user_logged_in
+  
   def new
   end
 
   def create
+    @post = current_user.post.build(post_params)
+    if @post.save
+      flash[:success] = '投稿しました。'
+      redirect_to root_url
+    else
+      flash.now[:danger] = '投稿に失敗しました。'
+      render new
+    end
   end
 
   def search
+  end
+  
+  private
+  
+  def post_params
+    params.require(:post).permit(:image, :capture)
   end
 end
