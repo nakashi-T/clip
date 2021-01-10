@@ -8,4 +8,6 @@ class User < ApplicationRecord
                     format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{7,}/ }
   has_secure_password
   mount_uploader :image, ImageUploader
+  
+  has_many :posts
 end
