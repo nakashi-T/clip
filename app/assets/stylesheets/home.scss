@@ -179,8 +179,17 @@ a:hover,a:focus {
     line-height: 75px;
   }
 }
-.form-group {
+.form-image {
   text-align: center;
+}
+.form-input label {
+  margin-left: 10px;
+}
+.text-left {
+  text-align: left;
+}
+.text-left label {
+  margin-left: 10px;
 }
 .sign-user-image {
   display: inline-block;
@@ -200,4 +209,11 @@ a:hover,a:focus {
   display: none;
 }
 
-// users#
+// ログイン
+.text-center a {
+  color: #00bfff;
+}
+.text-center a:hover {
+  color: #009dff;
+  text-decoration: underline;
+}
