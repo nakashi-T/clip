@@ -24,19 +24,16 @@
       </div>
     <% end %>
   </div>
-  <div class="col-md-3 offset-md-1">
+  <div class="col-md-3 offset-md-1 current_user-wrapper">
     <div class="row">
-    
-    
       <% if current_user.image? %>
           <%= link_to image_tag(current_user.image.url, class: 'current-user-picture mr-3'), user_path(current_user) %>
         <% else %>
           <%= link_to image_tag("default_user.svg", class: 'current-user-picture mr-3'), user_path(current_user) %>
         <% end %>
       <%= link_to current_user.name, user_path(current_user), class: 'current_user-name text-center' %>
-      
     </div>
-    <div class="user-follow">
+    <div class="user-follow mt-4">
       <div class="row">
         <div class="col-md-6 text-center">
           <p class="">フォローリスト</p>

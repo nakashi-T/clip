@@ -242,3 +242,8 @@ a:hover,a:focus {
   display:inline;
   line-height: 65px;
 }
+@media (max-width: 767px) {
+  .current_user-wrapper {
+     display: none; 
+  }
+}
