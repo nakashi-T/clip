@@ -1,5 +1,9 @@
-<% posts.each do |post| %>
-  <div>
-    <%= image_tag post.image.url, class: 'post-photo' if post.image? %>
-  </div>
-<% end %>
+<div class="current-wrapper">
+  <% posts.each do |post| %>
+    <div class="post-image">
+      <div class="inner">
+        <%= image_tag post.image.url if post.image? %>
+      </div>
+    </div>
+  <% end %>
+</div>

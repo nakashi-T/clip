@@ -10,9 +10,10 @@
 </aside>
 <div>
   <ul class="nav nav-tabs nav-justified mt-3">
-    <li class="nav-item"><a href="#" class="nav-link nav-text">投稿</a></li>
+    <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link nav-text <%= 'active' if current_page?(user_path(@user)) %>">投稿 <span class="badge badge-secondary"><%= @count_posts %></span></a></li>
     <li class="nav-item"><a href="#" class="nav-link nav-text">フォロー</a></li>
     <li class="nav-item"><a href="#" class="nav-link nav-text">フォロワー</a></li>
     <li class="nav-item"><a href="#" class="nav-link nav-text">いいね</a></li>
   </ul>
+  <%= render 'posts/posts_list', posts: @posts %>
 </div>

@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     @user = User.find(params[:id])
+    @posts = @user.posts.order(id: :desc).page(params[:page]).per(30)
+    counts(@user)
   end
 
   # GET /users/new
