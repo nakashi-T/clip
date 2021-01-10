@@ -180,6 +180,7 @@ a:hover,a:focus {
   margin-left: 10px;
 }
 .sign-user-image {
+  margin: 0 auto;
   display: inline-block;
   width: 200px;
 }
@@ -217,9 +218,43 @@ a:hover,a:focus {
 .post-button {
   display:inline-block;
 }
+.box-radius {
+  border-radius: 15px;
+}
+.add-eva p {
+  margin-bottom: 5px;
+}
+.capt-label {
+  display: block;
+}
+.post-new {
+  text-align: center;
+}
+.post-picture {
+  // object-fit: cover;
+  height: 100%;
+  width: 220px;
+}
+.post-pic-field {
+  height: 100px;
+  text-align: center;
+}
+.post-pic-button {
+  line-height: 100px;
+  display: inline;
+  width: 100px;
+}
+@media (max-width: 767px) {
+.post-field {
+  line-height:135px;
+  }
+}
+
+
+
 
 // 投稿一覧（タイムライン） パーシャル
-.post-wrapper {
+.box {
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15); 
 }
 .top-user-picture {
@@ -282,6 +317,4 @@ a:hover,a:focus {
   transform: translate(-50%, -50%);
   width: auto;
   height: 100%;
-
-
 }
