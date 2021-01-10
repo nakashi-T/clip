@@ -1,23 +1,50 @@
-<div>
-  <% posts.each do |post| %>
-    <div>
-      <div>
-        <% if post.user.image? %>
-          <%= link_to image_tag(post.user.image.url, class: 'top-user-picture'), user_path(post.user) %>
-        <% else %>
-          <%= link_to image_tag("default_user.svg", class: 'top-user-picture'), user_path(post.user) %>
-        <% end %>
-        <%= link_to post.user.name, user_path(post.user) %>
+<div class="row">
+  <div class="offset-md-2 col-md-6">
+    <% posts.each do |post| %>
+      <div class="post-wrapper border mb-5">
+        <div class="mt-3 mb-3 ml-3">
+          <% if post.user.image? %>
+            <%= link_to image_tag(post.user.image.url, class: 'top-user-picture mr-3'), user_path(post.user) %>
+          <% else %>
+            <%= link_to image_tag("default_user.svg", class: 'top-user-picture mr-3'), user_path(post.user) %>
+          <% end %>
+          <%= link_to post.user.name, user_path(post.user) %>
+        </div>
+        <div>
+          <!--<p>投稿画像</p>-->
+          <%= image_tag post.image.url, class: 'post-photo' if post.image? %>
+          <div class="p-3">
+            <p class="pb-0">自己評価項目</p>
+            <p>いいね</p>
+            <!--<p>コメント</p>-->
+            <p><%= post.capture %></p>
+            <p class="text-right"><%= post.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+          </div>
+        </div>
       </div>
-      <div>
-        <!--<p>投稿画像</p>-->
-        <%= post.image %>
-        <p>自己評価項目</p>
-        <p>いいね</p>
-        <!--<p>コメント</p>-->
-        <p><%= post.capture %></p>
-        <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+    <% end %>
+  </div>
+  <div class="col-md-3 offset-md-1">
+    <div class="row">
+    
+    
+      <% if current_user.image? %>
+          <%= link_to image_tag(current_user.image.url, class: 'current-user-picture mr-3'), user_path(current_user) %>
+        <% else %>
+          <%= link_to image_tag("default_user.svg", class: 'current-user-picture mr-3'), user_path(current_user) %>
+        <% end %>
+      <%= link_to current_user.name, user_path(current_user), class: 'current_user-name text-center' %>
+      
+    </div>
+    <div class="user-follow">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <p class="">フォローリスト</p>
+        </div>
+        <div class="col-md-6 text-center">
+          <a href="#">全て表示</a>
+        </div>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>
