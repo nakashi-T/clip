@@ -1,0 +1,23 @@
+<div>
+  <% posts.each do |post| %>
+    <div>
+      <div>
+        <% if post.user.image? %>
+          <%= link_to image_tag(post.user.image.url, class: 'top-user-picture'), user_path(post.user) %>
+        <% else %>
+          <%= link_to image_tag("default_user.svg", class: 'top-user-picture'), user_path(post.user) %>
+        <% end %>
+        <%= link_to post.user.name, user_path(post.user) %>
+      </div>
+      <div>
+        <!--<p>投稿画像</p>-->
+        <%= post.image %>
+        <p>自己評価項目</p>
+        <p>いいね</p>
+        <!--<p>コメント</p>-->
+        <p><%= post.capture %></p>
+        <p><%= post.created_at.strftime('%Y/%m/%d') %></p>
+      </div>
+    </div>
+  <% end %>
+</div>

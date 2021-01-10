@@ -61,6 +61,15 @@ a:hover,a:focus {
   color: #fff;
 }
 
+// トップページ（ログインあり）
+.top-user-picture {
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+
 // users#index (/users)
 .user-text {
   font-size: 1.5rem;
