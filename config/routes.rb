@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   get 'search', to: 'posts#search'
   resources :users, only: [:index, :show, :new, :create]
   
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:new, :create, :show]
 end
