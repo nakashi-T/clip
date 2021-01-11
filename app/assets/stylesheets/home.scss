@@ -333,6 +333,7 @@ a:hover,a:focus {
 @media (max-width: 767px) {
   .test {
   margin-top: 10px;
+  // 下記は設定を無効にしている
   position: initial;
   top: initial;
   left: initial;
