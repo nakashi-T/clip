@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_10_025349) do
+ActiveRecord::Schema.define(version: 2021_01_11_085106) do
+
+  create_table "evaluations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "post_id"
+    t.integer "item_title_1"
+    t.integer "item_amount_1"
+    t.integer "item_title_2"
+    t.integer "item_amount_2"
+    t.integer "item_title_3"
+    t.integer "item_amount_3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_evaluations_on_post_id"
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -30,5 +43,6 @@ ActiveRecord::Schema.define(version: 2021_01_10_025349) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "evaluations", "posts"
   add_foreign_key "posts", "users"
 end
