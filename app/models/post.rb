@@ -5,4 +5,6 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   
   has_many :evaluations
+  accepts_nested_attributes_for :evaluations
+  
 end

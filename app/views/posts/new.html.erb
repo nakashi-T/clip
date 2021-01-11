@@ -1,12 +1,13 @@
 
   <%= form_with(model: @post, local: true) do |f| %>
+  
     <div class="row">
       <div class="col-md-6">
         
         <div class="post-new">
           <div class="sign-user-image">
             <% if @post.image.present? %>
-              <%= image_tag @post.image, id: :img_prev_post, class: "post-picture" %>
+              <%= image_tag @post.image.to_s, id: :img_prev_post, class: "post-picture" %>
             <% else %>
               <%= image_tag "default_post.svg", id: :img_prev_post, class: "post-picture" %>
             <% end %>
@@ -44,11 +45,30 @@
       </div>
       <div class="col-md-4 offset-md-1 p-4 border box box-radius add-eva text-center">
         <p><span class="badge badge-danger mr-1">必須</span>自己評価カテゴリー<span class="ml-1 badge badge-success">１</span></p>
-          <%= render '/posts/evaluations_select' %>
-        <p>自己評価カテゴリー<span class="ml-1 badge badge-success">２</span></p>
-          <%= render '/posts/evaluations_select' %>
-        <p>自己評価カテゴリー<span class="ml-1 badge badge-success">３</span></p></p>
-          <%= render '/posts/evaluations_select' %>
+          
+          <%= f.fields_for :evaluations do |eva_form| %>
+          <div class="form-group">
+            <%= eva_form.label :item_title_1, '自己評価カテゴリー1' %>
+            <%= eva_form.select :item_title_1, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
+            <%= eva_form.label :item_amount_1, '自己評価数' %>
+            <%= eva_form.text_field :item_amount_1, required: true, class: 'form-control' %>
+          </div>
+        
+          <div class="form-group">
+            <%= eva_form.label :item_title_2, '自己評価カテゴリー2' %>
+            <%= eva_form.select :item_title_2, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '選択してください'}, { class: 'form-control' } %>
+            <%= eva_form.label :item_amount_2, '自己評価数' %>
+            <%= eva_form.text_field :item_amount_2, class: 'form-control' %>
+          </div>
+          
+          <div class="form-group">
+            <%= eva_form.label :item_title_3, '自己評価カテゴリー3' %>
+            <%= eva_form.select :item_title_3, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '選択してください'}, { class: 'form-control' } %>
+            <%= eva_form.label :item_title_3, '自己評価数' %>
+            <%= eva_form.text_field :item_amount_3, class: 'form-control' %>
+          </div>
+          <% end %>
+          
         <p>※必ず１つ、お答えください</p>
       </div>
     </div>

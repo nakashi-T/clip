@@ -3,10 +3,14 @@ class PostsController < ApplicationController
   
   def new
     @post = current_user.posts.build
+    @post.evaluations.build
   end
 
   def create
     @post = current_user.posts.build(post_params)
+    # @post.evaluations.build(evaluation_params)
+    
+    
     if @post.save
       flash[:success] = '投稿しました。'
       redirect_to root_url
@@ -27,6 +31,9 @@ class PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:image, :capture)
+    params.require(:post).permit(:image, :capture, 
+    evaluations_attributes: [:item_title_1, :item_amount_1, :item_title_2, :item_amount_2, :item_title_3, :item_amount_3])
+    # params.require(:shop).permit(:name, comments_attributes: [:content])
   end
+  # params.permit(:item_title_1, :item_amount_1, :item_title_2, :item_amount_2, :item_title_3, :item_amount_3)
 end
