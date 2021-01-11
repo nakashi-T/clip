@@ -21,16 +21,26 @@
       
       <div class="eva-list">
         <div class="eva-item">
-          <p>幸福度</p>
-          <p>1</p>
+          <% @post.evaluations.each do |evaluation| %>
+          
+            <!--<= @evaluation.item_title_1 %>!--　左はダメな理由があまり分からない>　-->
+            <%= evaluation.item_title_1 %>
+            <%= evaluation.item_amount_1 %>
+          
+        
+          
+          
         </div>
         <div class="eva-item">
-          <p>印象度</p>
-          <p>2</p>
+          <%= evaluation.item_title_2 %>
+          <%= evaluation.item_amount_2 %>
         </div>
         <div class="eva-item">
-          <p>幸福度</p>
-          <p>3</p>
+          <%= evaluation.item_title_3 %>
+          <%= evaluation.item_amount_3 %>
+          <!--<p>幸福度</p>-->
+          <!--<p>3</p>-->
+        <% end %>
         </div>
       </div>
       <div class="like-list">

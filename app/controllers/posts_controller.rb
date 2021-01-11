@@ -8,8 +8,6 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    # @post.evaluations.build(evaluation_params)
-    
     
     if @post.save
       flash[:success] = '投稿しました。'
@@ -24,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
   end
-
+  
   def search
   end
   
@@ -33,7 +31,6 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :capture, 
     evaluations_attributes: [:item_title_1, :item_amount_1, :item_title_2, :item_amount_2, :item_title_3, :item_amount_3])
-    # params.require(:shop).permit(:name, comments_attributes: [:content])
   end
-  # params.permit(:item_title_1, :item_amount_1, :item_title_2, :item_amount_2, :item_title_3, :item_amount_3)
+  
 end
