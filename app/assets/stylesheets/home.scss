@@ -318,3 +318,53 @@ a:hover,a:focus {
   width: auto;
   height: 100%;
 }
+
+// 投稿詳細
+.details-list {
+  position: relative;
+}
+.test {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+}
+@media (max-width: 767px) {
+  .test {
+  margin-top: 10px;
+  position: initial;
+  top: initial;
+  left: initial;
+  -webkit-transform : translate(0%, 0%);
+  transform : translate(0%, 0%);
+}
+}
+.post-created {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+.my-user-wrapper {
+  height: 80px;
+}
+.my-user-photo{
+  display: inline-block;
+  width: 65px;
+}
+.my-user-name {
+  display: inline-block;
+  height: 65px;
+}
+.my-user-name a {
+  line-height: 65px;
+}
+.post-show-photo {
+  width: 100%;
+}
+.post-show-photo img {
+  width: 100%;
+  border-radius: 5px;
+}
