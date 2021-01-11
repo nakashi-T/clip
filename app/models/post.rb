@@ -4,4 +4,5 @@ class Post < ApplicationRecord
   validates :image, presence: true
   mount_uploader :image, ImageUploader
   
+  has_many :evaluations
 end
