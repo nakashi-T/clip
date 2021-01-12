@@ -429,12 +429,12 @@ a:hover,a:focus {
 }
 // 自己評価
 .eva-block {
-  // width: 130%;
   font-size: 1.2rem;
   margin-bottom: 10px;
+  display: inline;
 }
 .eva-block p {
-  display: inline-block;
+  display: block;
   margin-bottom: 0;
 }
 .item_amount {

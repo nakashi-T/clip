@@ -1,163 +1,171 @@
 <% post.evaluations.each do |evaluation| %>
-          
-            <!--<= @evaluation.item_title_1 %>!--　左はダメな理由があまり分からない>　-->
-  <div class="eva-block">
-    <% if evaluation.item_title_1 == 1 %>
-        <p>幸せ度：</p>
-      <% elsif evaluation.item_title_1 == 2 %>
-        <p>印象度：</p>
-      <% elsif evaluation.item_title_1 == 3 %>
-        <p>熱中度：</p>
-      <% elsif evaluation.item_title_1 == 4 %>
-        <p>緊張度：</p>
-      <% elsif evaluation.item_title_1 == 5 %>
-        <p>癒され度：</p>
-    <% end %>
-    <div class="item_amount">
-      <% if evaluation.item_amount_1 == 0 %>
-        <% 5.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_1 == 1 %>
-        <% 1.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 4.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_1 == 2 %>
-        <% 2.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 3.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_1 == 3 %>
-        <% 3.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 2.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_1 == 4 %>
-        <% 4.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 1.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_1 == 5 %>
-        <% 5.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="eva-block">
+  <div class="eva-wapper">
     
-     <% if evaluation.item_title_2 == 1 %>
-        <p>幸せ度：</p>
-      <% elsif evaluation.item_title_2 == 2 %>
-        <p>印象度：</p>
-      <% elsif evaluation.item_title_2 == 3 %>
-        <p>熱中度：</p>
-      <% elsif evaluation.item_title_2 == 4 %>
-        <p>緊張度：</p>
-      <% elsif evaluation.item_title_2 == 5 %>
-        <p>癒され度：</p>
-    <% end %>
-    
-    <div class="item_amount">
-      <% if evaluation.item_amount_2 == 0 %>
-        <% 5.times do %>
-          <i class="far fa-circle eva"></i>
+    <div class="eva-list">
+      
+      <div class="eva-block">
+        
+        <% if evaluation.item_title_1 == 1 %>
+            <p>幸せ度：</p>
+          <% elsif evaluation.item_title_1 == 2 %>
+            <p>印象度：</p>
+          <% elsif evaluation.item_title_1 == 3 %>
+            <p>熱中度：</p>
+          <% elsif evaluation.item_title_1 == 4 %>
+            <p>緊張度：</p>
+          <% elsif evaluation.item_title_1 == 5 %>
+            <p>癒され度：</p>
         <% end %>
-      <% elsif evaluation.item_amount_2 == 1 %>
-        <% 1.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 4.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_2 == 2 %>
-        <% 2.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 3.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_2 == 3 %>
-        <% 3.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 2.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_2 == 4 %>
-        <% 4.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 1.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_2 == 5 %>
-        <% 5.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
+        <div class="item_amount">
+          <% if evaluation.item_amount_1 == 0 %>
+            <% 5.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_1 == 1 %>
+            <% 1.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 4.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_1 == 2 %>
+            <% 2.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 3.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_1 == 3 %>
+            <% 3.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 2.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_1 == 4 %>
+            <% 4.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 1.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_1 == 5 %>
+            <% 5.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+          <% end %>
+        </div>
+        
+      </div>
+      <div class="eva-block">
+        
+       <% if evaluation.item_title_2 == 1 %>
+          <p>幸せ度：</p>
+        <% elsif evaluation.item_title_2 == 2 %>
+          <p>印象度：</p>
+        <% elsif evaluation.item_title_2 == 3 %>
+          <p>熱中度：</p>
+        <% elsif evaluation.item_title_2 == 4 %>
+          <p>緊張度：</p>
+        <% elsif evaluation.item_title_2 == 5 %>
+          <p>癒され度：</p>
       <% end %>
+      
+        <div class="item_amount">
+          <% if evaluation.item_amount_2 == 0 %>
+            <% 5.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_2 == 1 %>
+            <% 1.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 4.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_2 == 2 %>
+            <% 2.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 3.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_2 == 3 %>
+            <% 3.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 2.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_2 == 4 %>
+            <% 4.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 1.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_2 == 5 %>
+            <% 5.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+          <% end %>
+        </div>
+        
+      </div>
+      <div class="eva-block">
+        <% if evaluation.item_title_3 == 1 %>
+            <p>幸せ度：</p>
+          <% elsif evaluation.item_title_3 == 2 %>
+            <p>印象度：</p>
+          <% elsif evaluation.item_title_3 == 3 %>
+            <p>熱中度：</p>
+          <% elsif evaluation.item_title_3 == 4 %>
+            <p>緊張度：</p>
+          <% elsif evaluation.item_title_3 == 5 %>
+            <p>癒され度：</p>
+        <% end %>
+        
+        <div class="item_amount">
+          <% if evaluation.item_amount_3 == 0 %>
+            <% 5.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_3 == 1 %>
+            <% 1.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 4.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_3 == 2 %>
+            <% 2.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 3.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_3 == 3 %>
+            <% 3.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 2.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_3 == 4 %>
+            <% 4.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+            <% 1.times do %>
+              <i class="far fa-circle eva"></i>
+            <% end %>
+          <% elsif evaluation.item_amount_3 == 5 %>
+            <% 5.times do %>
+              <i class="fas fa-circle eva"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="eva-block">
-    <% if evaluation.item_title_3 == 1 %>
-        <p>幸せ度：</p>
-      <% elsif evaluation.item_title_3 == 2 %>
-        <p>印象度：</p>
-      <% elsif evaluation.item_title_3 == 3 %>
-        <p>熱中度：</p>
-      <% elsif evaluation.item_title_3 == 4 %>
-        <p>緊張度：</p>
-      <% elsif evaluation.item_title_3 == 5 %>
-        <p>癒され度：</p>
-    <% end %>
-    
-    <div class="item_amount">
-      <% if evaluation.item_amount_3 == 0 %>
-        <% 5.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_3 == 1 %>
-        <% 1.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 4.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_3 == 2 %>
-        <% 2.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 3.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_3 == 3 %>
-        <% 3.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 2.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_3 == 4 %>
-        <% 4.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-        <% 1.times do %>
-          <i class="far fa-circle eva"></i>
-        <% end %>
-      <% elsif evaluation.item_amount_3 == 5 %>
-        <% 5.times do %>
-          <i class="fas fa-circle eva"></i>
-        <% end %>
-      <% end %>
-    </div>
+      
   </div>
 <% end %>
