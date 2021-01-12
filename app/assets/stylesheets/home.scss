@@ -369,10 +369,23 @@ a:hover,a:focus {
   width: 100%;
   border-radius: 5px;
 }
-
+// 自己評価
+.eva-block {
+  // width: 130%;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.eva-block p {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.item_amount {
+  display: inline-block;
+}
 
 
 // 評価ボタン
 .eva {
   color: #ffa500;
 }
+
