@@ -52,37 +52,25 @@
           <div class="form-group">
             <%= eva_form.label :item_title_1, '自己評価カテゴリー1' %>
             <%= eva_form.select :item_title_1, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '選択してください'}, { class: 'form-control' , required: true } %>
-            <%= eva_form.label :item_amount_1, '自己評価数' %>
--           <%= eva_form.text_field :item_amount_1, required: true, class: 'form-control' %>
-
-          </div> 
-          
-          <div class="field" id="star">
+            
+            <div class="field", id= "star">
             
             <%= eva_form.label :item_amount_1, "星評価：" %>
             <%= eva_form.hidden_field :item_amount_1, id: :review_star %>
             <script>
               $('#star').raty({
-                size     : 36,
+                size: 36,
                 starOff:  '<%= asset_path('star-off.png') %>',
                 starOn : '<%= asset_path('star-on.png') %>',
-                scoreName: 'evaluation[item_amount_1]',   //# evaluationカラムへの保存
+                scoreName: 'post[evaluations_attributes][0][item_amount_1]',   //# evaluationカラムへの保存
               });
               
-              
-              
             </script>
-            
-            
-            
           </div>
+        </div> 
           
           
-          
-          
-          
-          
-        
+   
           <div class="form-group">
             <%= eva_form.label :item_title_2, '自己評価カテゴリー2' %>
             <%= eva_form.select :item_title_2, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '選択してください'}, { class: 'form-control' } %>
