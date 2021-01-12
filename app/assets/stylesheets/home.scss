@@ -431,10 +431,10 @@ a:hover,a:focus {
 .eva-block {
   font-size: 1.2rem;
   margin-bottom: 10px;
-  display: inline;
+  display: inline-block;
 }
 .eva-block p {
-  display: block;
+  display: inline-block;
   margin-bottom: 0;
 }
 .item_amount {

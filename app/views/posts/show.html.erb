@@ -16,19 +16,19 @@
       <%= image_tag @post.image.url %>
     </div>
   </div>
-  <div class="col-md-6 text-center details-list">
+  <div class="col-6 text-center details-list">
     <div class="test">
       <div class="eva-list">
         <div class="eva-item">
           <%= render "/evaluations/evaluation_list", post: @post %>
         </div>
-      <div class="like-list">
-        いいね 10
-      </div>
-      <div class="coment-list">
-        <p>
-          <%= @post.capture %>
-        </p>
+        <div class="like-list">
+          いいね 10
+        </div>
+        <div class="coment-list">
+          <p>
+            <%= @post.capture %>
+          </p>
       </div>
     </div>
   </div>
