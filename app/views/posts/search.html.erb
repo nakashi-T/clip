@@ -1,7 +1,5 @@
 <style>
- * {
-   box-sizing: border-box;
- }
+
  .container {
    display: flex;
    justify-content: center;
@@ -30,7 +28,33 @@
    background-color: red;
    opacity: 0.7;
  }
+ 
+/* .fa{*/
+/*  font-size:30px;*/
+/*}*/
+#rating{
+  font-size:0;
+  width:140px;
+}
 </style>
+
+<script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.raty.js"></script>
+    <script>
+    var score = $('#star1').raty('score');
+      $(function(){
+        $('#star1').raty();
+      });
+    </script>
+  
+  
+    <p id="star1"></p>
+  
+
+
+
+
+
 <div class="container">
   <div class="wrapper">
     <div class="content">hover前だよ</div>
