@@ -220,6 +220,7 @@ a:hover,a:focus {
 }
 .post-button {
   display:inline-block;
+  
 }
 .box-radius {
   border-radius: 15px;
@@ -239,7 +240,7 @@ a:hover,a:focus {
   width: 220px;
 }
 .post-pic-field {
-  height: 100px;
+  height: 80px;
   text-align: center;
 }
 .post-pic-button {
@@ -252,9 +253,26 @@ a:hover,a:focus {
   line-height:135px;
   }
 }
-.eva-field img {
-  width: 24px;
+.eva-label {
+  display: block;
 }
+.eva-select {
+  display: inline-block;
+  width: 165px;
+}
+.eva-form-label {
+  display: none;
+}
+.eva-circle {
+  width: 165px;
+  text-align: center;
+}
+.eva-field img {
+  width: 25px;
+  margin-right: 2px;
+  margin-top: 5px;
+}
+
 
 
 
