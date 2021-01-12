@@ -302,11 +302,13 @@ a:hover,a:focus {
   display: block;
   padding-top: 100%;
 }
+
 .inner {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
+  
 }
 .inner img {
   position: absolute;
@@ -318,8 +320,7 @@ a:hover,a:focus {
   width: auto;
   height: 100%;
 }
-.inner a:hover::after {
-  // opacity: 0.5;
+.inner .image-wrapper::after {
   content: '';
   position: absolute;
   top: 0;
@@ -327,9 +328,30 @@ a:hover,a:focus {
   bottom: 0;
   left: 0;
   background-color: rgba(128,128,128,0.7);
+  display: none;
 }
 
-
+// 投稿一覧（ユーザー詳細） パーシャル
+.posts-eva-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: none;
+}
+.inner a:hover > .image-wrapper::after {
+  display: block;
+}
+.inner a:hover > .posts-eva-wrapper {
+  display: block;
+}
+.posts-eva-wrapper p {
+  color: #e6e6e6;
+  
+}
 
 // 投稿詳細
 .details-list {
