@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create, :show] do
     member do
       post :evaluation
-      get 'likes', to: 'posts#likes'
+      # get 'likes', to: 'posts#likes'
     end 
   end
   

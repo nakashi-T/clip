@@ -23,9 +23,9 @@
           <%= render "evaluations/evaluation_list", post: @post %>
         </div>
         <div class="like-list">
-          いいね 10
           <%= render 'favorites/favorite_button', post: @post %>
         </div>
+        <%= @count_favoriters %>
         <div class="coment-list">
           <p>
             <%= @post.capture %>
@@ -38,4 +38,11 @@
         <%= @post.created_at.strftime("%Y/%m/%d %H:%M") %>
       </p>
     </div>
+  </div>
 </div>
+
+
+<div>
+  <p>いいねしたユーザー<span class="badge badge-secondary"><%= @count_favoriters %></span></p>
+</div>
+<%= render 'users/users', users: @favoriters %>
