@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers]
+  before_action :require_user_logged_in, only: [:followings, :followers]
 
   # GET /users
   def index
