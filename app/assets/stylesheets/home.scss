@@ -153,7 +153,7 @@ a:hover,a:focus {
   color: #ffa500;
   background-color: #fff;
 }
-.signup-button:hover {
+.signup-button:hover{
   border: 1px solid #ffa500;
   background-color: #ffa500;
   color: #fff;
@@ -441,9 +441,25 @@ a:hover,a:focus {
   display: inline-block;
 }
 
-
 // 評価ボタン
 .eva {
   color: #ffa500;
 }
 
+// フォローボタン
+.un-follow-2 {
+  display: none;
+}
+.follow-wrapper:hover .un-follow-1 {
+  display: none;
+}
+.follow-wrapper:hover .un-follow-2 {
+  display: block;
+  margin-top: 0;
+  background-color: #FF3300;
+  border-color: #FF3300;
+}
+.follow-wrapper:focus .un-follow-2 {
+  background-color: #FF3300;
+  border-color: #FF3300;
+}
