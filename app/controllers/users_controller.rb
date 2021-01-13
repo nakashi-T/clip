@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user_logged_in, only: [:followings, :followers, :favoriteings]
+  before_action :require_user_logged_in, only: [:followings, :followers, :likes]
 
   # GET /users
   def index
@@ -86,8 +86,6 @@ class UsersController < ApplicationController
   
   def likes
     @user = User.find(params[:id])
-    
-    # @posts = @user.posts.order(id: :desc).page(params[:page]).per(30)
     @favoriteings = @user.favoriteings.page(params[:page])
     counts(@user)
   end
