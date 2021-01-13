@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = @post.user
     @favoriters = @post.favoriters.page(params[:page]).per(30)
-    counts(@post)
+    post_counts(@post)
   end
   
   def search
