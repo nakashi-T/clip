@@ -22,22 +22,23 @@
         <div class="eva-item">
           <%= render "evaluations/evaluation_list", post: @post %>
         </div>
-        <div class="like-list">
-          <%= render 'favorites/favorite_button', post: @post %>
+        <div class="like-form">
+          <%= render 'favorites/favorite_button', post: @post, class: 'like-form' %>
+          <p><%= @count_favoriters %></p>
         </div>
-        <%= @count_favoriters %>
         <div class="coment-list">
           <p>
             <%= @post.capture %>
           </p>
-      </div>
+        </div>
+        <div>
+          <p class="post-created pb-0">
+            <%= @post.created_at.strftime("%Y/%m/%d %H:%M") %>
+          </p>
+        </div>
     </div>
   </div>
-    <div>
-      <p class="post-created pb-0">
-        <%= @post.created_at.strftime("%Y/%m/%d %H:%M") %>
-      </p>
-    </div>
+    
   </div>
 </div>
 <div class="like-user-wrapper border mt-4">
