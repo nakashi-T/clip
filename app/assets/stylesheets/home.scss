@@ -60,6 +60,48 @@ a:hover,a:focus {
   background-color: #00bfff;
   color: #fff;
 }
+.current_user-wrapper {
+  position: fixed;
+  right: 50px;
+}
+.follow-link {
+  display: block;
+}
+.current-user-title {
+  text-align: left
+}
+.current-user-title > p {
+  display: inline-block;
+}
+.current-user-title > p:nth-of-type(1) {
+  margin-right: 15px;
+}
+.follow-list {
+  text-align: left;
+}
+.follow-list > a,
+.follow-list > p
+{
+  display: inline-block;
+}
+.follow-list > p {
+  margin-left: 5px;
+}
+.follow-list > img {
+  // margin-right: 100px;
+}
+@media (max-width: 1000px) {
+  .follow-list {
+    text-align: center;
+  }
+  .follow-list > a,
+  .follow-list > p
+  {
+  display: block;
+  margin-left: 0;
+}
+}
+
 
 // users#index (/users)
 .user-text {

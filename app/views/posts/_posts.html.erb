@@ -36,7 +36,7 @@
     <% end %>
   </div>
   <div class="col-md-3 offset-md-1 current_user-wrapper">
-    <div class="row">
+    <div>
       <% if current_user.image? %>
           <%= link_to image_tag(current_user.image.url, class: 'current-user-picture mr-3'), user_path(current_user) %>
         <% else %>
@@ -45,13 +45,24 @@
       <%= link_to current_user.name, user_path(current_user), class: 'current_user-name text-center' %>
     </div>
     <div class="user-follow mt-4">
-      <div class="row">
-        <div class="col-md-6 text-center">
-          <p class="">フォローリスト</p>
+      <div>
+        <div class="text-center">
+          <div class="current-user-title">
+            <p>フォローリスト</p>
+            <p><%= link_to '全て表示', followings_user_path(current_user) %></p>
+          </div>
+          <% @followings.first(5).each do |follow_user| %>
+          <div class="follow-list mb-3">
+            <% if follow_user.image? %>
+              <%= link_to image_tag(follow_user.image.url, class: 'top-user-picture'), user_path(follow_user) %>
+            <% else %>
+              <%= link_to image_tag("default_user.svg", class: 'top-user-picture'), user_path(follow_user) %>
+            <% end %>
+            <p><%= link_to follow_user.name, user_path(follow_user) %></p>
+          </div>
+          <% end %>
         </div>
-        <div class="col-md-6 text-center">
-          <a href="#">全て表示</a>
-        </div>
+      
       </div>
     </div>
   </div>
