@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user_logged_in, only: [:index, :show]
-
+  before_action :require_user_logged_in, only: [:index, :show, :followings, :followers]
 
   # GET /users
   def index
@@ -72,6 +71,19 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page]).per(30)
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page]).per(30)
+    counts(@user)
+  end
+  
 
   private
     
