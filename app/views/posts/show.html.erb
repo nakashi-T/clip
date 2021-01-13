@@ -1,7 +1,7 @@
 <div class="row border box-radius p-3">
   <div class="col-md-6 ">
     <div class="my-user-wrapper">
-      <div class="my-user-photo mr-3">
+      <div class="post-user-photo mr-3">
         <% if @user.image? %>
           <%= link_to image_tag(@user.image.url, class: 'current-user-picture'), user_path(@user) %>
         <% else %>

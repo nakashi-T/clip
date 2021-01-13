@@ -103,7 +103,7 @@ a:hover,a:focus {
   }
   .photo-right {
   text-align: center;
-  height: 42px;
+  height: 110px;
   }
   .my-user-text {
     padding: 10px 0;
@@ -111,7 +111,7 @@ a:hover,a:focus {
 }
 @media (min-width: 768px) {
   .my-user-text {
-    line-height: 160px;
+    line-height: 80px;
   }
 }
 .my-user-picture{
@@ -409,7 +409,7 @@ a:hover,a:focus {
 .my-user-wrapper {
   height: 80px;
 }
-.my-user-photo{
+.post-user-photo{
   display: inline-block;
   width: 65px;
 }

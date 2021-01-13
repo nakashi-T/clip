@@ -5,6 +5,7 @@
     </div>
     <div class="photo-right col-md-5 offset-md-2">
       <p class="my-user-text mb-0"><%= @user.name %></p>
+      <%= render 'relationships/follow_button', user: @user %>
     </div>
   </div>
 </aside>
