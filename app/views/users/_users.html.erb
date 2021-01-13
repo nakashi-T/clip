@@ -12,7 +12,7 @@
             <p><%= link_to user.name, user_path(user), class: "user-text mb-0" %></p>
           </div>
           <div class="mt-1">
-            <p><%= link_to 'フォロー', user_path(user), class: 'btn btn-primary follow-text'%></p>
+            <p><%= render 'relationships/follow_button', user: user %></p>
           </div>
         </div>
       </div>

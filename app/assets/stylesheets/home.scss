@@ -215,12 +215,12 @@ a:hover,a:focus {
 
 // 新規投稿 "/posts/new"
 .post-field {
-  line-height:270px;
+  line-height:220px;
   text-align:center;
 }
 .post-button {
   display:inline-block;
-  
+  padding: 5px 40px;
 }
 .box-radius {
   border-radius: 15px;
@@ -454,7 +454,7 @@ a:hover,a:focus {
   display: none;
 }
 .follow-wrapper:hover .un-follow-2 {
-  display: block;
+  display: inline-block;
   margin-top: 0;
   background-color: #FF3300;
   border-color: #FF3300;
@@ -463,3 +463,4 @@ a:hover,a:focus {
   background-color: #FF3300;
   border-color: #FF3300;
 }
+
