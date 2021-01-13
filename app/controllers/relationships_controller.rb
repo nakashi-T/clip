@@ -3,7 +3,6 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:follow_id])
     current_user.follow(user)
     flash[:success] = 'フォローしました。'
-    # redirect_to root_url
     redirect_back(fallback_location: root_path)
   end
 
