@@ -1,13 +1,15 @@
 class FavoritesController < ApplicationController
+  before_action :require_user_logged_in
+  
   def create
-    post = Post.find(params[:like_id])
+    post = Post.find(params[:post_id])
     current_user.favorite(post)
     flash[:success] = 'いいねしました。'
     redirect_back(fallback_location: root_path)
   end
 
   def destroy
-    post = Post.find(params[:like_id])
+    post = Post.find(params[:post_id])
     current_user.unfavorite(post)
     flash[:success] = 'いいねを外しました。'
     redirect_back(fallback_location: root_path)

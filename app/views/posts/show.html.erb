@@ -20,10 +20,11 @@
     <div class="test">
       <div class="eva-list">
         <div class="eva-item">
-          <%= render "/evaluations/evaluation_list", post: @post %>
+          <%= render "evaluations/evaluation_list", post: @post %>
         </div>
         <div class="like-list">
           いいね 10
+          <%= render 'favorites/favorite_button', post: @post %>
         </div>
         <div class="coment-list">
           <p>
