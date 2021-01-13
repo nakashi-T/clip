@@ -34,4 +34,19 @@ class User < ApplicationRecord
   def following?(other_user)
     self.followings.include?(other_user)
   end
+  
+  
+  def favorite(other_post)
+    self.favorites.find_or_create_by(post_id: other_post.id)
+  end
+  
+  def unfavorite(other_post)
+    favorite = self.favorites.find_by(post_id: other_post.id)
+    favorite.destroy if favorite
+  end
+  
+  def favoriteing?(other_post)
+    self.favoriteings.include?(other_post)
+  end
+  
 end
