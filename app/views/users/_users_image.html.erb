@@ -1,6 +1,6 @@
-<% if @user.image? %>
+<% if user.image? %>
   <p>
-    <%= image_tag @user.image.url, class: 'my-user-picture' %>
+    <%= image_tag user.image.url, class: 'my-user-picture' %>
   </p>
 <% else %>
   <p>

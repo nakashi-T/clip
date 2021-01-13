@@ -1,7 +1,7 @@
 <aside>
   <div class="row my-user-wapper">
     <div class="my-user-image col-md-5">
-      <%= render 'users_image',user: @user %>
+      <%= render 'users_image', user: @user %>
     </div>
     <div class="photo-right col-md-5 offset-md-2">
       <p class="my-user-text mb-0"><%= @user.name %></p>
@@ -11,5 +11,5 @@
 </aside>
 <div>
   <%= render 'users/users_tab', user: @user %>
-  <%= render 'users/users', users: @followings %>
+  <%= render 'posts/posts_list', posts: @favoriteings %>
 </div>
