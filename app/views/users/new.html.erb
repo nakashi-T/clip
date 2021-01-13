@@ -1,15 +1,11 @@
 <div class="text-center mb-3">
   <h1>ユーザー登録</h1>
 </div>
-
 <div>
   <div class="row">
     <div class="signup-form col-12 col-sm-9 col-md-8 col-lg-6 col-xl-5">
-      
       <%= form_with(model: @user, local: true) do |f| %>
-        
         <div class="form-group form-image">
-          
           <div class="sign-user-image">
             <% if @user.image.present? %>
               <%= image_tag @user.image, id: :img_prev, class: "sign-user-picture" %>
@@ -20,7 +16,6 @@
           <div class="sign-user-name">
             <%= f.label :image, "写真を選択" ,class: "signup-button btn btn-primary btn-block" %>
             <%= f.file_field :image, id: :user_image, class: "picture-form" %>
-            
             <script type="text/javascript">
               $(function() {
                function readURL(input) {
@@ -39,31 +34,24 @@
               });
             </script>
           </div>
-          
-          
         </div>
-        
         <div class="form-group form-input">
           <%= f.label :name, 'ユーザー名' %>
           <%= f.text_field :name, required: true, placeholder: '15文字以下で入力してください', class: 'form-control' %>
         </div>
-      
         <div class="form-group form-input">
           <%= f.label :email, 'メールアドレス' %>
           <%= f.email_field :email, required: true, class: 'form-control' %>
         </div>
-        
         <div class="form-group form-input">
           <%= f.label :password, 'パスワード' %>
           <%= f.password_field :password, required: true, placeholder: '英数字8文字以上で入力してください', class: 'form-control' %>
         </div>
-      
         <div class="form-group form-input">
           <%= f.label :password_confirmation, 'パスワード(確認用)' %>
           <%= f.password_field :password_confirmation, required: true, placeholder: 'もう一度同じパスワードを入力してください', class: 'form-control mb-4' %>
         </div>
-        
-        <%= f.submit '登録する', class: 'signup-button btn btn-primary btn-block mb-5' %>
+        <%= f.submit '登録する', class: 'signup-button btn btn-block mb-5' %>
       <% end %>
       <p class='text-login mb-5'><%= link_to 'ログインの方はこちらへ', login_path %></p>
     </div>

@@ -1,132 +1,121 @@
-
-  <%= form_with(model: @post, local: true) do |f| %>
-  
-    <div class="row">
-      <div class="col-md-6">
-        
-        <div class="post-new">
-          <div class="sign-user-image">
-            <% if @post.image.present? %>
-              <%= image_tag @post.image.to_s, id: :img_prev_post, class: "post-picture" %>
-            <% else %>
-              <%= image_tag "default_post.svg", id: :img_prev_post, class: "post-picture" %>
-            <% end %>
-          </div>
-          
-          <div class="field post-pic-field">
-            <%= f.label :image, "写真を選択する" ,class: "post-pic-button signup-button btn btn-primary btn-block" %>
-            <%= f.file_field :image, id: :post_image, class: "picture-form" %>
-          </div>
-        </div>
-          <script type="text/javascript">
-            $(function() {
-             function readURL(input) {
-               if (input.files && input.files[0]) {
-                 var reader = new FileReader();
-                 reader.onload = function (e) {
-                   $('#img_prev_post').attr('src', e.target.result);
-                 }
-                 reader.readAsDataURL(input.files[0]);
-               }
-             }
-             $("#post_image").change(function(){
-               readURL(this);
-               console.log(this);
-             });
-            });
-          </script>
-        <div>
-          <p class="text-center"><span class="badge badge-danger mr-1">必須</span>XXMBまでの画像をアップロードできます</p>
-        </div>
-      </div>
-      <div class="col-md-5 p-4 border box box-radius add-eva text-center">
-          
-          <%= f.fields_for :evaluations do |eva_form| %>
-          <div class="form-group mb-4">
-            <div class='eva-label'>
-              <span class="badge badge-danger mr-1">必須</span>
-              <%= eva_form.label :item_title_1, '自己評価カテゴリー' %>
-              <span class="ml-1 badge badge-success">１</span>
-            </div>
-            
-            <%= eva_form.select :item_title_1, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' , required: true } %>
-            
-            <div class="field eva-field", id= "star">
-              <%= eva_form.label :item_amount_1, "丸評価：", class: "eva-form-label" %>
-              <div class="eva-circle">
-                <%= eva_form.hidden_field :item_amount_1, id: :review_star %>
-              </div>
-                <script>
-                  $('#star').raty({
-                    size: 36,
-                    starOff:  '<%= asset_path('no-eva.png') %>',
-                    starOn : '<%= asset_path('eva.png') %>',
-                    scoreName: 'post[evaluations_attributes][0][item_amount_1]',   //# evaluationカラムへの保存
-                  });
-                </script>
-              </div>
-            </div> 
-  
-          <div class="form-group mb-4">
-            <div class='eva-label'>
-              <%= eva_form.label :item_title_2, '自己評価カテゴリー' %>
-              <span class="ml-1 badge badge-success">2</span>
-            </div>
-            <%= eva_form.select :item_title_2, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
-            
-            <div class="field eva-field", id= "star_2">
-              <%= eva_form.label :item_amount_2, "丸評価：", class: "eva-form-label" %>
-              <div class="eva-circle">
-                <%= eva_form.hidden_field :item_amount_2, id: :review_star_2 %>
-              </div>
-                <script>
-                  $('#star_2').raty({
-                    size: 36,
-                    starOff:  '<%= asset_path('no-eva.png') %>',
-                    starOn : '<%= asset_path('eva.png') %>',
-                    scoreName: 'post[evaluations_attributes][0][item_amount_2]',   //# evaluationカラムへの保存
-                  });
-                </script>
-              </div>
-            </div> 
-          
-          <div class="form-group mb-4">
-            <div class='eva-label'>
-              <%= eva_form.label :item_title_3, '自己評価カテゴリー' %>
-              <span class="ml-1 badge badge-success">3</span>
-            </div>
-            <%= eva_form.select :item_title_3, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
-            <div class="field eva-field", id= "star_3">
-              <%= eva_form.label :item_amount_3, "丸評価：", class: "eva-form-label" %>
-              <div class="eva-circle">
-                <%= eva_form.hidden_field :item_amount_3, id: :review_star_3 %>
-              </div>
-                <script>
-                  $('#star_3').raty({
-                    size: 36,
-                    starOff:  '<%= asset_path('no-eva.png') %>',
-                    starOn : '<%= asset_path('eva.png') %>',
-                    scoreName: 'post[evaluations_attributes][0][item_amount_3]',   //# evaluationカラムへの保存
-                  });
-                </script>
-              </div>
-            </div> 
-            <p>※必ず１つ、お答えください</p>
-            
-          </div>
+<%= form_with(model: @post, local: true) do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="post-new">
+        <div class="sign-user-image">
+          <% if @post.image.present? %>
+            <%= image_tag @post.image.to_s, id: :img_prev_post, class: "post-picture" %>
+          <% else %>
+            <%= image_tag "default_post.svg", id: :img_prev_post, class: "post-picture" %>
           <% end %>
+        </div>
+        <div class="field post-pic-field">
+          <%= f.label :image, "写真を選択する" ,class: "post-pic-button signup-button btn btn-block" %>
+          <%= f.file_field :image, id: :post_image, class: "picture-form" %>
+        </div>
+      </div>
+        <script type="text/javascript">
+          $(function() {
+           function readURL(input) {
+             if (input.files && input.files[0]) {
+               var reader = new FileReader();
+               reader.onload = function (e) {
+                 $('#img_prev_post').attr('src', e.target.result);
+               }
+               reader.readAsDataURL(input.files[0]);
+             }
+           }
+           $("#post_image").change(function(){
+             readURL(this);
+             console.log(this);
+           });
+          });
+        </script>
+      <div>
+        <p class="text-center"><span class="badge badge-danger mr-1">必須</span>XXMBまでの画像をアップロードできます</p>
+      </div>
+    </div>
+    <div class="col-md-5 p-4 border box box-radius add-eva text-center">
+      <%= f.fields_for :evaluations do |eva_form| %>
+      <div class="form-group mb-4">
+        <div class='eva-label'>
+          <span class="badge badge-danger mr-1">必須</span>
+          <%= eva_form.label :item_title_1, '自己評価カテゴリー' %>
+          <span class="ml-1 badge badge-success">１</span>
+        </div>
+        <%= eva_form.select :item_title_1, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' , required: true } %>
+        <div class="field eva-field", id= "star">
+          <%= eva_form.label :item_amount_1, "丸評価：", class: "eva-form-label" %>
+          <div class="eva-circle">
+            <%= eva_form.hidden_field :item_amount_1, id: :review_star %>
           </div>
+            <script>
+              $('#star').raty({
+                size: 36,
+                starOff:  '<%= asset_path('no-eva.png') %>',
+                starOn : '<%= asset_path('eva.png') %>',
+                scoreName: 'post[evaluations_attributes][0][item_amount_1]',   //# evaluationカラムへの保存
+              });
+            </script>
+          </div>
+        </div> 
+      <div class="form-group mb-4">
+        <div class='eva-label'>
+          <%= eva_form.label :item_title_2, '自己評価カテゴリー' %>
+          <span class="ml-1 badge badge-success">2</span>
         </div>
+        <%= eva_form.select :item_title_2, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
+        <div class="field eva-field", id= "star_2">
+          <%= eva_form.label :item_amount_2, "丸評価：", class: "eva-form-label" %>
+          <div class="eva-circle">
+            <%= eva_form.hidden_field :item_amount_2, id: :review_star_2 %>
+          </div>
+            <script>
+              $('#star_2').raty({
+                size: 36,
+                starOff:  '<%= asset_path('no-eva.png') %>',
+                starOn : '<%= asset_path('eva.png') %>',
+                scoreName: 'post[evaluations_attributes][0][item_amount_2]',   //# evaluationカラムへの保存
+              });
+            </script>
+          </div>
+        </div> 
+      <div class="form-group mb-4">
+        <div class='eva-label'>
+          <%= eva_form.label :item_title_3, '自己評価カテゴリー' %>
+          <span class="ml-1 badge badge-success">3</span>
+        </div>
+        <%= eva_form.select :item_title_3, {'幸福度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
+        <div class="field eva-field", id= "star_3">
+          <%= eva_form.label :item_amount_3, "丸評価：", class: "eva-form-label" %>
+          <div class="eva-circle">
+            <%= eva_form.hidden_field :item_amount_3, id: :review_star_3 %>
+          </div>
+            <script>
+              $('#star_3').raty({
+                size: 36,
+                starOff:  '<%= asset_path('no-eva.png') %>',
+                starOn : '<%= asset_path('eva.png') %>',
+                scoreName: 'post[evaluations_attributes][0][item_amount_3]',   //# evaluationカラムへの保存
+              });
+            </script>
+          </div>
+        </div> 
+        <p>※必ず１つ、お答えください</p>
       </div>
-      <div class="row">
-        <div class="col-md-5 offset-1 text-center">
-          <%= f.label :capture, 'キャプション', class: "mt-3 capt-label" %>
-          <%= f.text_area :capture, size: "40x4", maxlength: "140", placeholder: '140字以内で入力してください。' %>
-        </div>
-        <div class="post-field col-md-4 text-center">
-          <%= f.submit '投稿する', class: 'post-button signup-button btn btn-primary mb-5' %>
-        </div>
+      <% end %>
       </div>
-    <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 offset-1 text-center">
+      <%= f.label :capture, 'キャプション', class: "mt-3 capt-label" %>
+      <%= f.text_area :capture, size: "40x4", maxlength: "140", placeholder: '140字以内で入力してください。' %>
+    </div>
+    <div class="post-field col-md-4 text-center">
+      <%= f.submit '投稿する', class: 'post-button signup-button btn mb-5' %>
+    </div>
+  </div>
+<% end %>
 
 
