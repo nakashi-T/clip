@@ -469,6 +469,22 @@ a:hover,a:focus {
   width: 100%;
   border-radius: 5px;
 }
+.like-user-wrapper {
+  font-size: 1.3rem;
+  display: block;
+  border-radius: 15px;
+  width: 270px;
+  height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+.like-user-wrapper > p {
+  margin-bottom: 0;
+  line-height: 50px;
+}
+.like-user-wrapper span {
+  margin-left: 5px;
+}
 // 自己評価
 .eva-block {
   font-size: 1.2rem;
