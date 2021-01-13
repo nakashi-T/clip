@@ -7,4 +7,7 @@ class Post < ApplicationRecord
   has_many :evaluations
   accepts_nested_attributes_for :evaluations
   
+  has_many :favorites
+  has_many :favoriters, through: :favorites, source: :user
+  
 end
