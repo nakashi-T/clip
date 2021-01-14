@@ -7,26 +7,4 @@
 <% end %>
 
 <%= render 'posts/posts_list', posts: @posts %>
-<div>
-  <div class="current-wrapper">
-  <% @posts.each do |post| %>
-    <div class="post-image">
-      <div class="inner">
-        <% if post.image? %>
-          <a href="/posts/<%= post.id %>">
-            <div class="image-wrapper">
-              <%= image_tag post.image.url %>
-            </div>
-              <%= render "/evaluations/evaluation_posts_list", post: post %>
-            <div class="post-like">
-              <p><i class="fas fa-heart fa-2x"></i></p>
-              <p><%= post.favoriters.count %></p>
-            </div>
-          </a>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
-</div>
 
