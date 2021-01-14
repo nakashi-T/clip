@@ -1,0 +1,24 @@
+
+<style>
+.px {
+  font-size: 16px;
+}
+
+@function get_vw($size, $viewport: 375) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size: 10) {
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+.vw {
+  @include fz_vw(16);
+}
+</style>
+
+<p class="px">16ｐｘのテキスト16ｐｘのテキスト</p>
+
+<p class="vw">4.375vwのテキスト4.375vwのテキスト</p>

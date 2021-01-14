@@ -8,8 +8,10 @@
               <%= image_tag post.image.url %>
             </div>
               <%= render "/evaluations/evaluation_posts_list", post: post %>
-              <%= render 'favorites/favorite_button', post: post, class: 'like-form' %>
-              <%= post.favoriters.count %>
+            <div class="post-like">
+              <p><i class="fas fa-heart fa-2x"></i></p>
+              <p><%= post.favoriters.count %></p>
+            </div>
           </a>
         <% end %>
       </div>

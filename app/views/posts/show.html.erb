@@ -17,7 +17,7 @@
     </div>
   </div>
   <div class="col-6 text-center details-list">
-    <div class="test">
+    <div class="post-wrapper">
       <div class="eva-list">
         <div class="eva-item">
           <%= render "evaluations/evaluation_list", post: @post %>
@@ -31,14 +31,14 @@
             <%= @post.capture %>
           </p>
         </div>
-        <div>
-          <p class="post-created pb-0">
-            <%= @post.created_at.strftime("%Y/%m/%d %H:%M") %>
-          </p>
-        </div>
+        
     </div>
   </div>
-    
+    <div>
+      <p class="post-created pb-0">
+        <%= @post.created_at.strftime("%Y/%m/%d %H:%M") %>
+      </p>
+    </div>
   </div>
 </div>
 <div class="like-user-wrapper border mt-4">

@@ -408,6 +408,27 @@ a:hover,a:focus {
   text-align: center;
   display: none;
 }
+.posts-eva-wrapper > p {
+  // font-size: 1vw;
+}
+.eva-block > p {
+  // font-size: 1vw;
+}
+.post-like {
+  position: absolute;
+  top: 93%;
+  left: 50%;
+  -webkit-transform : translate(-50%,-50%);
+  transform : translate(-50%,-50%);
+  display: none;
+}
+.post-like > p {
+  display: inline-block;
+  font-size: 8px;
+}
+.post-like > p:nth-of-type(2) {
+  font-size: 16px;
+}
 .inner a:hover > .image-wrapper::after {
   display: block;
 }
@@ -416,30 +437,41 @@ a:hover,a:focus {
 }
 .posts-eva-wrapper p {
   color: #e6e6e6;
-  
+}
+.inner a:hover > .post-like {
+  display: block;
+}
+.post-like {
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .posts-eva-wrapper {
+    font-size: 1.5vw;
+  }
+  .post-like > p {
+  display: inline-block;
+  font-size: 5px;
+  }
+.post-like > p:nth-of-type(2) {
+  font-size: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .inner a:hover > .post-like {
+    display: none;
+  }
 }
 
 // 投稿詳細
 .details-list {
   position: relative;
 }
-.test {
+.post-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform : translate(-50%,-50%);
   transform : translate(-50%,-50%);
-}
-@media (max-width: 767px) {
-  .test {
-  margin-top: 10px;
-  // 下記は設定を無効にしている
-  position: initial;
-  top: initial;
-  left: initial;
-  -webkit-transform : translate(50%, 0%);
-  transform : translate(50%, 0%);
-}
 }
 .post-created {
   position: absolute;
@@ -447,6 +479,24 @@ a:hover,a:focus {
   right: 0;
   margin: 0;
   padding: 0;
+}
+@media (max-width: 767px) {
+  .post-wrapper {
+  margin-top: 10px;
+  // 下記は設定を無効にしている
+  position: initial;
+  top: initial;
+  left: initial;
+  -webkit-transform : translate(50%, 0%);
+  transform : translate(50%, 0%);
+  }
+  .post-created {
+    position: initial;
+  top: initial;
+  left: initial;
+  -webkit-transform : translate(100%, 0%);
+  transform : translate(100%, 0%);
+  }
 }
 .my-user-wrapper {
   height: 80px;
@@ -488,9 +538,16 @@ a:hover,a:focus {
 
 // 自己評価
 .eva-block {
-  font-size: 1.2rem;
   margin-bottom: 10px;
   display: inline-block;
+}
+@media (max-width: 440px) {
+  .eva-block {
+    margin-bottom: 1px;
+  }
+  .eva-block > p {
+    font-size: 1px;
+  }
 }
 .eva-block p {
   display: inline-block;
