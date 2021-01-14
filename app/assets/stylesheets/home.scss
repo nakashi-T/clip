@@ -587,13 +587,23 @@ a:hover,a:focus {
 }
 .like-form > form {
   display: inline-block;
+  font-size: 1vw;
 }
 .like-form > p {
   margin-bottom: 0px;
   display: inline-block;
   width: 30px;
-  font-size:1.2rem;
+  font-size: 2vw;
 }
+@media (max-width: 767px) {
+  .like-form > form {
+    font-size: 10px;
+  }
+  .like-form > p {
+    font-size: 15px;
+  }
+}
+
 .like-btn {
   background-color: transparent;
   border: none;
