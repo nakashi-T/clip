@@ -1,24 +1,30 @@
+<p>検索</p>
 
-<style>
-.px {
-  font-size: 16px;
-}
+<%= form_tag(search_posts_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :name => nil %>
+<% end %>
 
-@function get_vw($size, $viewport: 375) {
-  $rate: 100 / $viewport;
-  @return $rate * $size * 1vw;
-}
+<div>
+  <div class="current-wrapper">
+  <% @posts.each do |post| %>
+    <div class="post-image">
+      <div class="inner">
+        <% if post.image? %>
+          <a href="/posts/<%= post.id %>">
+            <div class="image-wrapper">
+              <%= image_tag post.image.url %>
+            </div>
+              <%= render "/evaluations/evaluation_posts_list", post: post %>
+            <div class="post-like">
+              <p><i class="fas fa-heart fa-2x"></i></p>
+              <p><%= post.favoriters.count %></p>
+            </div>
+          </a>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
 
-@mixin fz_vw($font_size: 10) {
-  font-size: $font_size * 1px;
-  font-size: get_vw($font_size);
-}
-
-.vw {
-  @include fz_vw(16);
-}
-</style>
-
-<p class="px">16ｐｘのテキスト16ｐｘのテキスト</p>
-
-<p class="vw">4.375vwのテキスト4.375vwのテキスト</p>

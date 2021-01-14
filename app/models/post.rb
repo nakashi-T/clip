@@ -9,4 +9,14 @@ class Post < ApplicationRecord
   
   has_many :favorites
   has_many :favoriters, through: :favorites, source: :user
+  
+  
+  def self.search(search)
+    if search
+      Post.where(id: Evaluation.where("(item_title_1 = ?) OR (item_title_2 = ?) OR (item_title_3 = ?)", "#{search}", "#{search}", "#{search}"))
+    else
+      Post.all
+    end
+  end
+  
 end
