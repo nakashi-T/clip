@@ -20,3 +20,6 @@ class Post < ApplicationRecord
   end
   
 end
+
+# item_amount_1のカラムの降順
+# posts.includes(:evaluations).order("evaluations.item_amount_1 DESC")

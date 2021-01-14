@@ -622,3 +622,17 @@ a:hover,a:focus {
 .like {
   color: #FF0461;
 }
+
+// 検索ページ
+.search-wrapper {
+  text-align: center;
+  margin: 0 auto;
+  height: 100px;
+  width: 500px;
+  line-height: 100px;
+  margin-bottom: 10px; 
+}
+.search-wrapper label,
+.search-wrapper select {
+  margin-right: 10px;  
+}
