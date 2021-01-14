@@ -480,6 +480,12 @@ a:hover,a:focus {
   margin: 0;
   padding: 0;
 }
+.delete-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3px 10px;
+}
 @media (max-width: 767px) {
   .post-wrapper {
   margin-top: 10px;
