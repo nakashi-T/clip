@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts, only: [:new, :create, :show] do
+  resources :posts, only: [:new, :create, :show, :destroy] do
     member do
       post :evaluation
     end
