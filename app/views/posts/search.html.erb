@@ -1,10 +1,12 @@
 <p>検索</p>
 
 <%= form_tag(search_posts_path,:method => 'get') do %>
-  <%= text_field_tag :search %>
+  <%= select_tag "search", options_for_select([["幸福度", 1],["印象度",2],["熱中度", 3],["緊張度",4],["癒され度",5]]), class: 'form-control eva-select' %>
+  
   <%= submit_tag '検索', :name => nil %>
 <% end %>
 
+<%= render 'posts/posts_list', posts: @posts %>
 <div>
   <div class="current-wrapper">
   <% @posts.each do |post| %>
