@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @post.destroy
     
     flash[:success] = '投稿は削除されました。'
-    post_url
+    redirect_to root_url
   end
   
   private
