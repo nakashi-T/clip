@@ -6,6 +6,7 @@ class Post < ApplicationRecord
   
   has_many :evaluations, dependent: :destroy
   accepts_nested_attributes_for :evaluations
+  # validates_associated :evaluations
   
   has_many :favorites, dependent: :destroy
   has_many :favoriters, through: :favorites, source: :user
