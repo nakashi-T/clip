@@ -638,12 +638,22 @@ a:hover,a:focus {
 .search-wrapper {
   text-align: center;
   margin: 0 auto;
-  height: 100px;
-  width: 500px;
-  line-height: 100px;
+  height: 100%;
+  width: 70vw;
+  line-height: 70px;
   margin-bottom: 10px; 
 }
 .search-wrapper label,
-.search-wrapper select {
-  margin-right: 10px;  
+.search-wrapper select,
+.search-wrapper input {
+  margin: 0 15px;  
+}
+@media (max-width: 720px) {
+  .search-wrapper {
+    line-height: 50px;
+  }
+  .search-wrapper select,
+  .search-wrapper input {
+    margin: 10px;  
+  }
 }
