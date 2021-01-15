@@ -243,6 +243,11 @@ a:hover,a:focus {
   display: none;
 }
 
+// エラーメッセージ
+.error-message {
+  color: red;
+}
+
 // ログイン "/login"
 .text-login {
   text-align: center;

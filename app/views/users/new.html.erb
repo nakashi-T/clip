@@ -8,14 +8,7 @@
       <%= form_with(model: @user, local: true) do |f| %>
         <div class="form-group form-image">
           
-          <% if f.object.errors.any? %>
-            <div id="error_explanation" class="alert alert-warning">
-              <ul class="mb-0">
-                <% f.object.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
+          <% if @user.errors.any? %>
           <% end %>
 
           <div class="sign-user-image">
@@ -50,18 +43,30 @@
         <div class="form-group form-input">
           <%= f.label :name, 'ユーザー名' %>
           <%= f.text_field :name, required: true, placeholder: '15文字以下で入力してください', class: 'form-control' %>
+          <% if @user.errors.include?(:name) %>
+            <p class="error-message"><%= @user.errors.full_messages_for(:name).first %></p>
+          <% end %>
         </div>
         <div class="form-group form-input">
           <%= f.label :email, 'メールアドレス' %>
           <%= f.email_field :email, required: true, class: 'form-control' %>
+          <% if @user.errors.include?(:email) %>
+            <p class="error-message"><%= @user.errors.full_messages_for(:email).first %></p>
+          <% end %>
         </div>
         <div class="form-group form-input">
           <%= f.label :password, 'パスワード' %>
           <%= f.password_field :password, required: true, placeholder: '英数字8文字以上で入力してください', class: 'form-control' %>
+          <% if @user.errors.include?(:password) %>
+            <p class="error-message"><%= @user.errors.full_messages_for(:password).first %></p>
+          <% end %>
         </div>
         <div class="form-group form-input">
           <%= f.label :password_confirmation, 'パスワード(確認用)' %>
           <%= f.password_field :password_confirmation, required: true, placeholder: 'もう一度同じパスワードを入力してください', class: 'form-control mb-4' %>
+          <% if @user.errors.include?(:password_confirmation) %>
+            <p class="error-message"><%= @user.errors.full_messages_for(:password_confirmation).first %></p>
+          <% end %>
         </div>
         <%= f.submit '登録する', class: 'signup-button btn btn-block mb-5' %>
       <% end %>
