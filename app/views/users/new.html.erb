@@ -2,10 +2,22 @@
   <h1>ユーザー登録</h1>
 </div>
 <div>
+  
   <div class="row">
     <div class="signup-form col-12 col-sm-9 col-md-8 col-lg-6 col-xl-5">
       <%= form_with(model: @user, local: true) do |f| %>
         <div class="form-group form-image">
+          
+          <% if f.object.errors.any? %>
+            <div id="error_explanation" class="alert alert-warning">
+              <ul class="mb-0">
+                <% f.object.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
           <div class="sign-user-image">
             <% if @user.image.present? %>
               <%= image_tag @user.image, id: :img_prev, class: "sign-user-picture" %>
