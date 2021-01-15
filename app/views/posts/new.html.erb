@@ -71,18 +71,25 @@
               });
             </script>
           </div>
-        </div> 
-        
-        <% if @post.errors.any? %>
-          <div id="error_explanation" class="alert alert-warning">
-            <ul class="mb-0">
-              <% @post.errors.full_messages_for(:evaluations).each do |message| %>
-                <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
+          <% if @post.evaluations.each do |ev| %>
+          <% if ev.errors.any? %>
+            <p class="error-message text-center"><%= ev.errors.full_messages_for(:item_amount_1).first %></p>
+            <% end %>
+          <% end %>
         <% end %>
+        </div> 
+          
       
+      
+     <!-- @post.evaluates.each do |ev|-->
+     <!--if (ev.errors.any?)-->
+     <!--      ev.errors.full_messages_for(:item_amount_1) do |msg|-->
+     <!--          ### メッセージの表示-->
+     <!--      end-->
+     <!--   end-->
+     <!-- end-->
+          
+    
       <div class="form-group mb-4">
         <div class='eva-label'>
           <%= eva_form.label :item_title_2, '自己評価カテゴリー' %>

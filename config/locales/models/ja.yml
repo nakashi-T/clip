@@ -11,7 +11,5 @@ ja:
         password: パスワード
       post:
         image: 画像
-      post/evaluations:
-        # item_amount_1: 自己評価の評価数
       evaluation:
-        # item_amount_1: 自己評価の評価数
+        item_amount_1: 自己評価の評価数
