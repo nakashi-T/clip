@@ -73,9 +73,14 @@
           </div>
         </div> 
         
-        <% if @post.errors.include?(:item_amount_1) %>
-        <p>test</p>
-          <p class="error-message text-center"><%= @post.errors.full_messages_for(:item_amount_1).first %></p>
+        <% if @post.errors.any? %>
+          <div id="error_explanation" class="alert alert-warning">
+            <ul class="mb-0">
+              <% @post.errors.full_messages_for(:evaluations).each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
       
       <div class="form-group mb-4">
