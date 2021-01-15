@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   
   validates :image, presence: true
   mount_uploader :image, ImageUploader
+  validates :capture, length: { maximum: 140 }
   
   has_many :evaluations, dependent: :destroy
   accepts_nested_attributes_for :evaluations

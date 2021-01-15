@@ -46,8 +46,8 @@
       <%= f.label :capture, 'キャプション', class: "mt-3 capt-label" %>
       <%= f.text_area :capture, size: "40x4", maxlength: "140", placeholder: '140字以内で入力してください。' %>
     </div>
-      
-    </div>
+  </div>
+  
     <div class="col-md-5 p-4 border box box-radius add-eva text-center">
       <%= f.fields_for :evaluations do |eva_form| %>
       <div class="form-group mb-4">
@@ -78,17 +78,6 @@
           <% end %>
         <% end %>
         </div> 
-          
-      
-      
-     <!-- @post.evaluates.each do |ev|-->
-     <!--if (ev.errors.any?)-->
-     <!--      ev.errors.full_messages_for(:item_amount_1) do |msg|-->
-     <!--          ### メッセージの表示-->
-     <!--      end-->
-     <!--   end-->
-     <!-- end-->
-          
     
       <div class="form-group mb-4">
         <div class='eva-label'>
