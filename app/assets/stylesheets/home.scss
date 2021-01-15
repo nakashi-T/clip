@@ -24,6 +24,25 @@ a:hover,a:focus {
 .top-title {
   color: #ffa500;
 }
+.nav-link::after {
+  display: none;
+}
+.nav-user-image {
+  width: 25px;
+  border-radius: 50%;
+}
+.text-nav {
+  display: none;
+}
+@media (max-width: 767px) {
+  .photo-nav {
+    display: none;
+  }
+  .text-nav {
+  display: block;
+  }
+}
+
 
 // トップページtoppages/index
 .wrapper {
