@@ -14,4 +14,6 @@ class FavoritesController < ApplicationController
     flash[:success] = 'いいねを外しました。'
     redirect_back(fallback_location: root_path)
   end
+  
+  private
 end
