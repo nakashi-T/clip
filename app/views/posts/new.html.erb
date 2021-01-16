@@ -8,9 +8,9 @@
       <div class="post-new">
         <div class="sign-user-image">
           <% if @post.image.present? %>
-            <%= image_tag @post.image.to_s, id: :img_prev_post, class: "post-picture" %>
+            <%= image_tag @post.image.to_s, id: :img_prev_post, class: "post-picture", alt: '新規投稿画像' %>
           <% else %>
-            <%= image_tag "default_post.svg", id: :img_prev_post, class: "post-picture" %>
+            <%= image_tag "default_post.svg", id: :img_prev_post, class: "post-picture", alt: '新規投稿画像' %>
           <% end %>
         </div>
         <div class="field post-pic-field">
