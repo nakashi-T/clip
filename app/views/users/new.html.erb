@@ -13,7 +13,7 @@
 
           <div class="sign-user-image">
             <% if @user.image.present? %>
-              <%= image_tag @user.image, alt: '会員登録ユーザー', id: :img_prev, class: "sign-user-picture" %>
+              <%= image_tag @user.image.url, alt: '会員登録ユーザー', id: :img_prev, class: "sign-user-picture" %>
             <% else %>
               <%= image_tag "default_user.svg",alt: '会員登録ユーザー' , id: :img_prev, class: "sign-user-picture" %>
             <% end %>
