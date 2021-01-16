@@ -2,8 +2,8 @@
   <nav class="navbar navbar-expand-md navbar-light">
     
     <div class="justify-content-start">
-      <a class="navbar-brand" href="/"><sapn class="mr-1 top-title"><i class="far fa-clipboard"></i>Clip</span></a>
-      <a class="search-link" href="/posts/search"><sapn><i class="fas fa-search"></i></sapn>検索</a>
+      <a class="navbar-brand" href="/"><span class="mr-1 top-title"><i class="far fa-clipboard"></i>Clip</span></a>
+      <a class="search-link" href="/posts/search"><span><i class="fas fa-search"></i></span>検索</a>
     </div>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -22,7 +22,9 @@
             <% else %>
               <%= image_tag "default_user.svg", class: "nav-user-image" %>
             <% end %>
-            <a href="#" class="text-nav nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+              <a href="#" class="text-nav nav-link dropdown-toggle" data-toggle="dropdown">
+                <%= current_user.name %>
+              </a>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'マイプロフィール', user_path(current_user) %></li>

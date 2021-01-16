@@ -57,7 +57,7 @@
           <span class="ml-1 badge badge-success">１</span>
         </div>
         <%= eva_form.select :item_title_1, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' , required: true } %>
-        <div class="field eva-field", id= "star">
+        <div id="star" class="field eva-field">
           <%= eva_form.label :item_amount_1, "丸評価：", class: "eva-form-label" %>
           <div class="eva-circle">
             <%= eva_form.hidden_field :item_amount_1, id: :review_star %>
@@ -85,7 +85,7 @@
           <span class="ml-1 badge badge-success">2</span>
         </div>
         <%= eva_form.select :item_title_2, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
-        <div class="field eva-field", id= "star_2">
+        <div id= "star_2" class="field eva-field">
           <%= eva_form.label :item_amount_2, "丸評価：", class: "eva-form-label" %>
           <div class="eva-circle">
             <%= eva_form.hidden_field :item_amount_2, id: :review_star_2 %>
@@ -106,7 +106,7 @@
             <span class="ml-1 badge badge-success">3</span>
           </div>
           <%= eva_form.select :item_title_3, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
-          <div class="field eva-field", id= "star_3">
+          <div id="star_3" class="field eva-field">
             <%= eva_form.label :item_amount_3, "丸評価：", class: "eva-form-label" %>
             <div class="eva-circle">
               <%= eva_form.hidden_field :item_amount_3, id: :review_star_3 %>
@@ -125,9 +125,7 @@
         <p>※重複した評価は投稿できません</p>
       </div>
       <% end %>
-      </div>
-    </div>
-  </div>
+     </div>
   <div class="row">
     <div class="post-field col-md-12 text-center">
       <%= f.submit '投稿する', class: 'post-button signup-button btn mb-5' %>
@@ -161,5 +159,3 @@ $(function() {
       });
   });
 </script>
-
-
