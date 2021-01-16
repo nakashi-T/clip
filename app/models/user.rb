@@ -5,7 +5,8 @@ class User < ApplicationRecord
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i },
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 8 },
-                    format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{7,}/ }
+                    format: { with: /\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?[\d])\w{7,}\z/ ,
+                    message: "は半角8文字英大文字・小文字・数字それぞれ１文字以上含む必要があります(例：Password123)" }
   has_secure_password
   mount_uploader :image, ImageUploader
   

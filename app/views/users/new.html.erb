@@ -49,14 +49,14 @@
         </div>
         <div class="form-group form-input">
           <%= f.label :email, 'メールアドレス' %>
-          <%= f.email_field :email, required: true, class: 'form-control' %>
+          <%= f.email_field :email, required: true, placeholder: '例：clip@email.com', class: 'form-control' %>
           <% if @user.errors.include?(:email) %>
             <p class="error-message"><%= @user.errors.full_messages_for(:email).first %></p>
           <% end %>
         </div>
         <div class="form-group form-input">
-          <%= f.label :password, 'パスワード' %>
-          <%= f.password_field :password, required: true, placeholder: '英数字8文字以上で入力してください', class: 'form-control' %>
+          <%= f.label :password, 'パスワード（英数字8文字以上で入力してください）' %>
+          <%= f.password_field :password, required: true, placeholder: '例：Password123', class: 'form-control' %>
           <% if @user.errors.include?(:password) %>
             <p class="error-message"><%= @user.errors.full_messages_for(:password).first %></p>
           <% end %>
