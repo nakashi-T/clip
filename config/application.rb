@@ -35,13 +35,14 @@ module Clip
     
     # カラムを日本語化したファイルを読み取り
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    
+    # タイムゾーンを日本時間に設定
+    config.time_zone = "Tokyo"
+    config.active_record.default_timezone = :local
   end
 end
 
 module TimeFormatSandbox
   class Application < Rails::Application
-    # タイムゾーンを日本時間に設定
-    config.time_zone = 'Asia/Tokyo'
-    config.active_record.default_timezone = :local
   end
 end
