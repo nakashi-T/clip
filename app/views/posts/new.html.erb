@@ -122,6 +122,7 @@
             </div>
           </div> 
         <p>※必ず１つ、お答えください</p>
+        <p>※重複した評価は投稿できません</p>
       </div>
       <% end %>
       </div>
@@ -133,5 +134,32 @@
     </div>
   </div>
 <% end %>
+<script>
+$(function() {
+      // class="eva-select" が選択された時のイベント
+      $(".eva-select").on("change", function() {
+          // 「.eva-select に属するoptionで」「valueが空でない」「現在選択中」の value を取得して
+          // 配列に溜めておく
+          var selectedValues = [];
+          $(".eva-select option:not([value='']):selected").each(function() {
+              var $opt = $(this);
+              selectedValues.push($opt.val());
+          });
+          // 「.eva-select に属するoptionで」「valueが空でない」「現在選択中ではない」ものをloopで回す
+          $(".eva-select option:not([value='']):not(:selected)").each(function() {
+              var $opt = $(this);
+              var val = $opt.val();
+
+              // チェック対象のoptionのvalueが、selectedValuesに存在するものならdisabledにする
+              // そうでないならdisabled解除
+              if ($.inArray(val, selectedValues) >= 0) {
+                  $opt.prop("disabled", true);
+              } else {
+                  $opt.prop("disabled", false);
+              }
+          });
+      });
+  });
+</script>
 
 
