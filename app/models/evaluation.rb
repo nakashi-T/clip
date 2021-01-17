@@ -4,11 +4,12 @@ class Evaluation < ApplicationRecord
   validates :item_title_1, presence: true
   validates :item_amount_1, presence: true
   
-  # validates :item_amount_2, presence: true
+  # validates :item_allow, :item_amount_2, presence: true
   
-  # def item_allow
-  # allow_blank: true
-  # end
+  # private
+  #   def item_allow
+  #     :item_title_2.presence
+  #   end
   
   
   #小数点で入力したい時に行う
