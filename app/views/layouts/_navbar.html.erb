@@ -16,22 +16,18 @@
           <li class="nav-item"><%= link_to 'ユーザー一覧', users_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to '新規投稿', new_post_path, class: 'nav-link' %></li>
           <li class="nav-item dropdown">
-            <a href="#" class="photo-nav nav-link dropdown-toggle" data-toggle="dropdown">
-                <% if current_user.image? %>
-                  <%= image_tag current_user.image.url, alt: 'ユーザー' , class: 'nav-user-image' %>
-                <% else %>
-                  <%= image_tag "default_user.svg", alt: 'ユーザー' , class: "nav-user-image" %>
-                <% end %>
-                  <a href="#" class="text-nav nav-link dropdown-toggle" data-toggle="dropdown">
-                    <%= current_user.name %>
-                  </a>
-              
-                
+            <% if current_user.image? %>
+                  <%= image_tag current_user.image.url, alt: 'ユーザー' , class: 'photo-nav nav-user-image' %>
+              <% else %>
+                  <%= image_tag "default_user.svg", alt: 'ユーザー' , class: "photo-nav nav-user-image" %>
+              <% end %>
+            <a href="#" class="text-nav nav-link dropdown-toggle" data-toggle="dropdown">
+              <%= current_user.name %>
             </a>
-            <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item"><%= link_to 'マイプロフィール', user_path(current_user) %></li>
-              <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
-            </ul>
+            <div class="dropdown-menu dropdown-menu-right">
+              <%= link_to 'マイプロフィール', user_path(current_user), class: "dropdown-item" %>
+              <%= link_to 'ログアウト', logout_path, method: :delete, class: "dropdown-item" %>
+            </div>
           </li>
         <% else %>
           <li class="nav-item"><%= link_to 'ユーザー一覧', users_path, class: 'nav-link' %></li>
