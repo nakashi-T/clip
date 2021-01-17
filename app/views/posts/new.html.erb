@@ -59,9 +59,8 @@
         </div>
         <%= eva_form.select :item_title_1, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' , required: true } %>
         <div id="star" class="field eva-field">
-          <%= eva_form.label :item_amount_1, "丸評価：", class: "eva-form-label" %>
           <div class="eva-circle">
-            <%= eva_form.hidden_field :item_amount_1, id: :review_star %>
+            <%= eva_form.hidden_field :item_amount_1, :id => "review_star" %>
           </div>
             <script>
               $('#star').raty({
@@ -87,9 +86,8 @@
         </div>
         <%= eva_form.select :item_title_2, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
         <div id= "star_2" class="field eva-field">
-          <%= eva_form.label :item_amount_2, "丸評価：", class: "eva-form-label" %>
           <div class="eva-circle">
-            <%= eva_form.hidden_field :item_amount_2, id: :review_star_2 %>
+            <%= eva_form.hidden_field :item_amount_2, :id => "review_star_2" %>
           </div>
             <script>
               $('#star_2').raty({
@@ -108,9 +106,8 @@
           </div>
           <%= eva_form.select :item_title_3, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
           <div id="star_3" class="field eva-field">
-            <%= eva_form.label :item_amount_3, "丸評価：", class: "eva-form-label" %>
             <div class="eva-circle">
-              <%= eva_form.hidden_field :item_amount_3, id: :review_star_3 %>
+              <%= eva_form.hidden_field :item_amount_3, :id => "review_star_3" %>
             </div>
               <script>
                 $('#star_3').raty({

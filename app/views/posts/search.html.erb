@@ -1,7 +1,7 @@
 <div class="border box-radius search-wrapper">
   <%= form_tag(search_posts_path,:method => 'get') do %>
     <%= label :search, '自己評価カテゴリー' %>
-    <%= select_tag "search", options_for_select([["幸福度", 1],["印象度",2],["熱中度", 3],["緊張度",4],["癒され度",5]]), class: 'form-control eva-select' %>
+    <%= select_tag "search", options_for_select([["幸せ度", 1],["印象度",2],["熱中度", 3],["緊張度",4],["癒され度",5]]), id: 'search_自己評価カテゴリー' , class: 'form-control eva-select' %>
     <%= submit_tag '検索', :name => nil , class: 'post-button signup-button btn' %>
   <% end %>
 </div>
