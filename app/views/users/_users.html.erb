@@ -9,10 +9,12 @@
             <% else %>
               <%= link_to image_tag("default_user.svg", class: "user-image", alt: 'ユーザー'), user_path(user) %>
             <% end %>
-            <p><%= link_to user.name, user_path(user), class: "user-text mb-0" %></p>
+            <p>
+              <%= link_to user.name, user_path(user), class: "user-text mb-0" %>
+            </p>
           </div>
           <div class="mt-1">
-            <p><%= render 'relationships/follow_button', user: user %></p>
+              <%= render 'relationships/follow_button', user: user %>
           </div>
         </div>
       </div>
