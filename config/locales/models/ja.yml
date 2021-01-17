@@ -13,4 +13,9 @@ ja:
       post:
         image: 画像
       evaluation:
-        item_amount_1: 自己評価の評価数
+        item_title_1:  1つめの評価の項目
+        item_amount_1: 1つめの評価数
+        item_title_2:  2つめの評価の項目
+        item_amount_2: 2つめの評価数
+        item_title_3:  3つめの評価の項目
+        item_amount_3: 3つめの評価数

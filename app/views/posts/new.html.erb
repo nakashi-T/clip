@@ -100,6 +100,7 @@
           </div>
           <% if @post.evaluations.each do |ev| %>
           <% if ev.errors.any? %>
+            <p class="error-message text-center"><%= ev.errors.full_messages_for(:item_title_2).first %></p>
             <p class="error-message text-center"><%= ev.errors.full_messages_for(:item_amount_2).first %></p>
             <% end %>
           <% end %>
@@ -124,6 +125,13 @@
                 });
               </script>
             </div>
+            <% if @post.evaluations.each do |ev| %>
+          <% if ev.errors.any? %>
+            <p class="error-message text-center"><%= ev.errors.full_messages_for(:item_title_3).first %></p>
+            <p class="error-message text-center"><%= ev.errors.full_messages_for(:item_amount_3).first %></p>
+            <% end %>
+          <% end %>
+        <% end %>
           </div> 
         <p>※必ず１つ、お答えください</p>
         <p>※重複した評価は投稿できません</p>
