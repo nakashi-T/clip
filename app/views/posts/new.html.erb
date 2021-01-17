@@ -98,6 +98,12 @@
               });
             </script>
           </div>
+          <% if @post.evaluations.each do |ev| %>
+          <% if ev.errors.any? %>
+            <p class="error-message text-center"><%= ev.errors.full_messages_for(:item_amount_2).first %></p>
+            <% end %>
+          <% end %>
+        <% end %>
         </div> 
         <div class="form-group mb-4">
           <div class='eva-label'>
