@@ -57,7 +57,7 @@
           <%= eva_form.label :item_title_1, '自己評価カテゴリー' %>
           <span class="ml-1 badge badge-success">１</span>
         </div>
-        <%= eva_form.select :item_title_1, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' , required: true } %>
+        <%= eva_form.select :item_title_1, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒し度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' , required: true } %>
         <div id="star" class="field eva-field">
           <div class="eva-circle">
             <%= eva_form.hidden_field :item_amount_1, :id => "review_star" %>
@@ -84,7 +84,7 @@
           <%= eva_form.label :item_title_2, '自己評価カテゴリー' %>
           <span class="ml-1 badge badge-success">2</span>
         </div>
-        <%= eva_form.select :item_title_2, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
+        <%= eva_form.select :item_title_2, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒し度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
         <div id= "star_2" class="field eva-field">
           <div class="eva-circle">
             <%= eva_form.hidden_field :item_amount_2, :id => "review_star_2" %>
@@ -111,7 +111,7 @@
             <%= eva_form.label :item_title_3, '自己評価カテゴリー' %>
             <span class="ml-1 badge badge-success">3</span>
           </div>
-          <%= eva_form.select :item_title_3, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒され度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
+          <%= eva_form.select :item_title_3, {'幸せ度': 1, '印象度': 2,'熱中度': 3,'緊張度': 4,'癒し度': 5}, { include_blank: '自己評価を選択'}, { class: 'form-control eva-select' } %>
           <div id="star_3" class="field eva-field">
             <div class="eva-circle">
               <%= eva_form.hidden_field :item_amount_3, :id => "review_star_3" %>
