@@ -28,10 +28,11 @@ a:hover,a:focus {
   display: none;
 }
 .nav-user-image {
+  object-fit: cover;
   width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
-
 .text-nav {
   display: none;
 }
